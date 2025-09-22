@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
             <motion.div variants={itemVariants} className="space-y-6">
               <div className="flex items-center">
                 <Image
-                  src="/images/placeholder1.png"
+                  src="/images/logo.png"
                   alt="Hela Cure Life Logo"
                   width={48}
                   height={48}
