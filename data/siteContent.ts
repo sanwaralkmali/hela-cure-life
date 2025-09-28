@@ -216,7 +216,7 @@ export const siteContent = {
       contact: {
         phone: "+967 775 232 328",
         email: "info@helacure.com",
-        address: "Seoyun City, Hadramout Governorate, Republic of Yemen"
+        address: "Head office: Aden City, 90th Street, Alqahera market road, block 12, In front of Al-Hijra Mosque. Taiz office: Taiz City, Western Ring Road, opposite Al Aqeeq Wedding Hall, Entrance in front of Jalb Company"
       },
       copyright: "© 2025 Hela Cure Life. All rights reserved.",
       developedBy: "Developed by Salah Alkmali",
@@ -359,7 +359,7 @@ export const siteContent = {
       contact: {
         phone: "+967 775 232 328",
         email: "info@helacure.com",
-        address: "مدينة سيئون، محافظة حضرموت، الجمهورية اليمنية"
+        address: "المكتب الرئيسي: مدينة عدن، شارع 90، طريق سوق القاهرة، بلوك 12، أمام مسجد الهجرة. مكتب تعز: مدينة تعز، الطريق الدائري الغربي، مقابل قاعة العقيق للأفراح، المدخل أمام شركة جلب"
       },
       copyright: "© 2025 هيلا كيور لايف. جميع الحقوق محفوظة.",
       developedBy: "تم التطوير بواسطة صلاح الكمالي",
