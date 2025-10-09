@@ -138,9 +138,9 @@ const Products: React.FC = () => {
 
   if (loading) {
     return (
-      <section id="products" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section id="products" className="py-12 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="container-custom">
-          <div className="text-center">
+          <div className="text-center px-4">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto"></div>
             <p className="mt-4 text-neutral-600">Loading products...</p>
           </div>
@@ -150,20 +150,20 @@ const Products: React.FC = () => {
   }
 
   return (
-    <section id="products" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section id="products" className="py-12 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
       <div className="container-custom">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
         >
           {/* Section Header */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-neutral-800 mb-6">
+          <motion.div variants={itemVariants} className="text-center mb-12 sm:mb-16 px-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-800 mb-4 sm:mb-6">
               {isRTL ? 'منتجاتنا الصحية' : 'Our Health Products'}
             </h2>
-            <p className="text-lg md:text-xl text-neutral-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-neutral-600 max-w-4xl mx-auto leading-relaxed">
               {isRTL
                 ? 'اكتشف مجموعتنا الواسعة من المنتجات الصحية عالية الجودة'
                 : 'Discover our wide range of high-quality health products'
@@ -173,12 +173,12 @@ const Products: React.FC = () => {
 
           {/* Tabs */}
           <motion.div variants={itemVariants} className="mb-12">
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-4 px-4">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => resetShowAll(tab.id)}
-                  className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                  className={`px-3 sm:px-6 py-2 sm:py-3 rounded-full font-medium text-sm sm:text-base transition-all duration-300 ${
                     activeTab === tab.id
                       ? (tab.isFeatured
                         ? 'bg-gradient-to-r from-primary-600 to-secondary-600 text-white shadow-lg'
@@ -189,13 +189,15 @@ const Products: React.FC = () => {
                 >
                   {isRTL ? tab.nameAr : tab.name}
                   {tab.hasData && (
-                    <span className="ml-2 px-2 py-1 text-xs bg-green-100 text-green-600 rounded-full">
-                      New
+                    <span className="ml-1 sm:ml-2 px-1 sm:px-2 py-1 text-xs bg-green-100 text-green-600 rounded-full">
+                      <span className="hidden sm:inline">New</span>
+                      <span className="sm:hidden">N</span>
                     </span>
                   )}
                   {tab.isFeatured && (
-                    <span className="ml-2 px-2 py-1 text-xs bg-yellow-100 text-yellow-600 rounded-full">
-                      ⭐ Featured
+                    <span className="ml-1 sm:ml-2 px-1 sm:px-2 py-1 text-xs bg-yellow-100 text-yellow-600 rounded-full">
+                      <span className="hidden sm:inline">⭐ Featured</span>
+                      <span className="sm:hidden">⭐</span>
                     </span>
                   )}
                 </button>
@@ -209,7 +211,7 @@ const Products: React.FC = () => {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 px-4 sm:px-0 mb-8"
           >
             {getProductsToShow().map((productKey) => {
               const currentProducts = allProducts[activeTab];
@@ -242,9 +244,14 @@ const Products: React.FC = () => {
                         : `${tabs.find(t => t.id === activeTab)?.name} Product ${productNumber}`
                       )}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      loading="lazy"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                      }}
                     />
                   </div>
-                  <div className="p-6">
+                  <div className="p-4 sm:p-6">
                     <h3 className="font-bold text-lg text-neutral-800 mb-3 line-clamp-2">
                       {product?.name || (isFeatured
                         ? (isRTL ? `منتج مميز ${productNumber}` : `Featured Product ${productNumber}`)
@@ -280,7 +287,7 @@ const Products: React.FC = () => {
           </motion.div>
 
           {/* Show All Button */}
-          <motion.div variants={itemVariants} className="text-center">
+          <motion.div variants={itemVariants} className="text-center px-4">
             {(() => {
               let productCount;
 
@@ -296,7 +303,7 @@ const Products: React.FC = () => {
                 return (
                   <button
                     onClick={() => setShowAll(!showAll)}
-                    className="bg-primary-600 text-white px-8 py-4 rounded-full font-medium hover:bg-primary-700 transition-colors duration-300 shadow-lg hover:shadow-xl"
+                    className="bg-primary-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base hover:bg-primary-700 transition-colors duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto"
                   >
                     {showAll
                       ? (isRTL ? 'عرض أقل' : 'Show Less')
