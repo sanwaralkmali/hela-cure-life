@@ -111,27 +111,56 @@ const About: React.FC = () => {
             </motion.div>
           </motion.div>
 
-          {/* Decorative Elements */}
+          {/* Scrolling Brand Promotion */}
           <motion.div
             variants={itemVariants}
-            className="flex justify-center mt-16"
+            className="mt-16 overflow-hidden"
           >
-            <div className="flex space-x-4">
+            <div className="text-center mb-8">
+              <h3 className="text-xl font-semibold text-neutral-700 mb-2">
+                Trusted Partner Brands
+              </h3>
+              <p className="text-neutral-500">
+                Working with leading pharmaceutical companies
+              </p>
+            </div>
+            <div className="relative overflow-hidden">
               <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="w-16 h-16 border-4 border-primary-200 border-t-primary-500 rounded-full"
-              />
-              <motion.div
-                animate={{ rotate: -360 }}
-                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                className="w-12 h-12 border-4 border-secondary-200 border-t-secondary-500 rounded-full"
-              />
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                className="w-8 h-8 border-4 border-primary-200 border-t-primary-500 rounded-full"
-              />
+                animate={{ x: "-50%" }}
+                transition={{
+                  duration: 60,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+                className="flex space-x-8 w-max"
+              >
+                {/* First set of brands */}
+                {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
+                  <div
+                    key={`first-${num}`}
+                    className="flex-shrink-0 w-24 h-24 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-shadow duration-300"
+                  >
+                    <img
+                      src={`/line/${num}.webp`}
+                      alt={`Brand ${num}`}
+                      className="max-w-full max-h-full object-contain p-2"
+                    />
+                  </div>
+                ))}
+                {/* Duplicate set for seamless loop */}
+                {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
+                  <div
+                    key={`second-${num}`}
+                    className="flex-shrink-0 w-24 h-24 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-shadow duration-300"
+                  >
+                    <img
+                      src={`/line/${num}.webp`}
+                      alt={`Brand ${num}`}
+                      className="max-w-full max-h-full object-contain p-2"
+                    />
+                  </div>
+                ))}
+              </motion.div>
             </div>
           </motion.div>
         </motion.div>

@@ -9,9 +9,10 @@ import Image from 'next/image';
 interface ProductsModalProps {
   isOpen: boolean;
   onClose: () => void;
+  onViewAllProducts?: () => void;
 }
 
-const ProductsModal: React.FC<ProductsModalProps> = ({ isOpen, onClose }) => {
+const ProductsModal: React.FC<ProductsModalProps> = ({ isOpen, onClose, onViewAllProducts }) => {
   const { isRTL, content } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -196,10 +197,12 @@ const ProductsModal: React.FC<ProductsModalProps> = ({ isOpen, onClose }) => {
           </div>
 
           {/* Footer Actions */}
-          <div className="flex items-center justify-between p-4 bg-neutral-50 border-t border-neutral-200">
+          <div className="flex flex-col sm:flex-row items-center justify-between p-4 bg-neutral-50 border-t border-neutral-200 gap-4">
             <div className="text-xs text-neutral-500">
               {content.products.navigation}
             </div>
+
+            {/* Navigation Controls */}
             <div className="flex items-center space-x-3">
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -226,6 +229,18 @@ const ProductsModal: React.FC<ProductsModalProps> = ({ isOpen, onClose }) => {
                 {content.products.close}
               </motion.button>
             </div>
+          </div>
+
+          {/* View All Products Button */}
+          <div className="p-4 bg-gradient-to-r from-primary-50 to-secondary-50 border-t border-neutral-200">
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={onViewAllProducts}
+              className="w-full bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white py-3 px-6 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              {isRTL ? 'عرض جميع المنتجات المتاحة' : 'View All Available Products'}
+            </motion.button>
           </div>
         </motion.div>
       </motion.div>

@@ -1,17 +1,22 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import Image from 'next/image';
-import ProductsModal from './ProductsModal';
 
 const Hero: React.FC = () => {
   const { content, isRTL } = useLanguage();
-  const [isProductsModalOpen, setIsProductsModalOpen] = useState(false);
 
   const scrollToServices = () => {
     const element = document.querySelector('#services');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToProducts = () => {
+    const element = document.querySelector('#products');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -62,7 +67,7 @@ const Hero: React.FC = () => {
               </button>
 
               <button
-                onClick={() => setIsProductsModalOpen(true)}
+                onClick={scrollToProducts}
                 className="btn-secondary group"
               >
                 <span className="group-hover:scale-105 transition-transform duration-200">
@@ -135,11 +140,6 @@ const Hero: React.FC = () => {
           </motion.div>
         </motion.div>
 
-        {/* Products Modal */}
-        <ProductsModal
-          isOpen={isProductsModalOpen}
-          onClose={() => setIsProductsModalOpen(false)}
-        />
       </div>
     </section>
   );

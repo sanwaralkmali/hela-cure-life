@@ -4,6 +4,8 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
+import Products from '../components/Products';
+import Partnership from '../components/Partnership';
 import Values from '../components/Values';
 import Stats from '../components/Stats';
 import ServicesSwiper from '../components/ServicesSwiper';
@@ -21,6 +23,12 @@ export default function HomePage() {
 
       {/* About Us Section */}
       <About />
+
+      {/* Products Section */}
+      <Products />
+
+      {/* Partnership Section */}
+      <Partnership />
 
       {/* Values & Principles Section */}
       <Values />

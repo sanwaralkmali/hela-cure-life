@@ -1,0 +1,84 @@
+{
+
+    "product-1": {
+        "name": "Blue OX",
+        "description": "Marvelous Formula For Health.",
+        "price": 12.99,
+        "currency": "USD",
+        "category": "bone healthy",
+        "tags": ["calcium", "vitamin D3", "bone health"],
+        "availability": "In Stock",
+        "image_url": "products/bone/product-1.webp/"
+    },
+    "product-2": {
+        "name": "Blue OX Line",
+        "description": "Promotes Erectile Function and Can Use In combination with PDE5 Inhibitors.",
+        "price": 15.49,
+        "currency": "USD",
+        "category": "bone healthy",
+        "tags": ["calcium", "vitamin D3", "bone health"],
+        "availability": "In Stock",
+        "image_url": "products/bone/product-2.webp/"
+    },
+    "product-3": {
+        "name": "Folic Oley",
+        "description": "Comprehensive formula to Treat Different Types Of Anemia .",
+        "price": 10.99,
+        "currency": "USD",
+        "category": "bone healthy",
+        "tags": ["calcium", "vitamin D3", "bone health"],
+        "availability": "In Stock",
+        "image_url": "products/bone/product-3.webp/"
+    },
+    "product-4": {
+        "name": "L Arginine",
+        "description": "Supports Blood Flow and Vascular Functions.",
+        "price": 10.99,
+        "currency": "USD",
+        "category": "bone healthy",
+        "tags": ["calcium", "vitamin D3", "bone health"],
+        "availability": "In Stock",
+        "image_url": "products/bone/product-4.webp/"
+    },
+    "product-5": {
+        "name": "Vapox Massage Spray",
+        "description": "Easing Pain,One Solution at a Time.",
+        "price": 8.99,
+        "currency": "USD",
+        "category": "bone healthy",
+        "tags": ["calcium", "vitamin D3", "bone health"],
+        "availability": "In Stock",
+        "image_url": "products/bone/product-5.webp/"
+    },
+    "product-6": {
+        "name": "Relassare Massage Cream",
+        "description": "Improves flexibility of joints& Relieves tired and sore muscles.",
+        "price": 9.99,
+        "currency": "USD",
+        "category": "bone healthy",
+        "tags": ["calcium", "vitamin D3", "bone health"],
+        "availability": "In Stock",
+        "image_url": "products/bone/product-6.webp/"
+    },
+    "product-7": {
+        "name": "D-Oley Plus",
+        "description": "Prophylactic Formula For Neonate Against Rickets.",
+        "price": 14.99, 
+        "currency": "USD",
+        "category": "bone healthy",
+        "tags": ["calcium", "vitamin D3", "bone health"],
+        "availability": "In Stock",
+        "image_url": "products/bone/product-7.webp/"
+    },
+    "product-8": {
+        "name": "Cal Oley",
+        "description": "Optimum Formula To Support Bone Health.",
+        "price": 11.99, 
+        "currency": "USD",
+        "category": "bone healthy",
+        "tags": ["calcium", "vitamin D3", "bone health"],
+        "availability": "In Stock",
+        "image_url": "products/bone/product-8.webp/"
+    }
+
+}
